@@ -1,0 +1,23 @@
+.resultContainer{
+    margin-top: 10vh;
+}
+
+.success{
+    font-size: 20px;
+    color: green;
+    margin: 1vh auto;
+}
+
+.error{
+    font-size: 18px;
+    color: red;
+    margin: 3vh auto;
+}
+
+.bold{
+    font-weight: bold;
+}
+.restart{
+    border: 1px solid black;
+    box-shadow: 1px;
+}
