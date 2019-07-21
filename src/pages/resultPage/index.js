@@ -12,7 +12,7 @@ const Result = (props) => {
                 <p className="success">Time Taken : <span className="success bold">{props.result.timeTaken}</span></p>
                 <br/>
                 <p className="success">Planet found: <span className="success bold">{props.result.planetName}</span></p>
-                <Link to='/' className="restart">Start Again</Link>
+                <button><Link to='/' className="restart">Start Again</Link></button>
             </div>
         )
     }else{
@@ -20,7 +20,8 @@ const Result = (props) => {
             <div className="resultContainer">
                 <p className="error">Error, No Result Found</p>
                 <br/>
-                <Link to="/" className="restart">Retry Again</Link>
+                <button><Link to="/" className="restart">Retry Again</Link></button>
+                
             </div>
         )
     }

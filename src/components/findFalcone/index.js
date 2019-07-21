@@ -8,7 +8,7 @@ const FindFalconeButton = (props) => {
     if(props.ajaxStatus.state === 'inprogress'){
         return <div className="loader"></div>
     }else{
-        return <button disabled={props.vehicleSelectionCount < 4} onClick={() => {props.getResult(props.history)}}>Find Falcone</button>
+        return <button className="falcon" disabled={props.vehicleSelectionCount < 4} onClick={() => {props.getResult(props.history)}}>Find Falcone</button>
     }
 }
 

@@ -1,11 +1,11 @@
 import React from 'react';
-
+import './style.css';
 const Footer = () => {
     return (
         <footer className="App-Footer">
             <p id="small">
-                Coding Problem - 
-                <a href={"https://www.geektrust.in/coding-problem/frontend/space"}  target="_blank">www.geektrust.in/findingFalcone</a>
+                Thank You : 
+                <a href={"https://www.linkedin.com/in/pradyumna-debnath-750239b7"} rel="noopener noreferrer" target="_blank">Pradyumna Debnath</a>
             </p>
         </footer>
     )

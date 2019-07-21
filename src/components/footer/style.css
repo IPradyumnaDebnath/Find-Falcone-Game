@@ -1,0 +1,13 @@
+#small{
+    font-size: 30px;
+    color:rgb(214, 200, 3);
+    
+   
+
+}
+#small a{ 
+        color:rgb(214, 200, 3);
+        text-decoration: underline;
+        font-family: italic;
+      }
+  
