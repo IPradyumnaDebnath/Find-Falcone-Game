@@ -11,7 +11,7 @@ const FindFalconeButton = (props) => {
             <span className="sr-only">Loading...</span>
         </div>
     } else {
-        return <div className="d-flex justify-content-center mt-3"> <button disabled={props.selectionCount < 4} onClick={() => { props.getResult(props.history) }}>Find Falcone</button></div>
+        return <div className="d-flex justify-content-center mt-3"> <button className="btn btn-success" disabled={props.selectionCount < 4} onClick={() => { props.getResult(props.history) }}>Find Falcone</button></div>
     }
 }
 
