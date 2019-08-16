@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { updateVehicleSelection } from '../../redux/actions/vehicleAction';
-import './style.css';
+import { updateVehicleSelection } from '../redux/actions/vehicleAction';
+import 'bootstrap/dist/css/bootstrap.css';
+
 
 class VehicleSelection extends React.Component{
     
@@ -12,19 +13,20 @@ class VehicleSelection extends React.Component{
     render(){
         let { props } = this;
         return (
-            <div className="planetContainer">
-                <form>
+            
+            <div className="d-flex justify-content-left">
+                <form >
                     {  props.show && props.vehicles.map(item => {
-                        let count = props.vehicleSelectionList.filter((element, index) => element === item.name && index <= props.step).length
+                        let count = props.VehicleSelectionList.filter((element, index) => element === item.name && index <= props.step).length
                         
                         let total_no  = item.total_no -  count;
-                        let isEnabled =  total_no + (props.vehicleSelectionList[props.step] === item.name ? 1 : 0)  > 0 && item.max_distance >= props.distance
+                        let isEnabled =  total_no + (props.VehicleSelectionList[props.step] === item.name ? 1 : 0)  > 0 && item.max_distance >= props.distance
                         return(
                             <div>
                             <label key={item.name}>
                                 <input 
                                     type="radio" 
-                                    checked={item.name === props.vehicleSelectionList[props.step]}
+                                    checked={item.name === props.VehicleSelectionList[props.step]}
                                     key={item.name}
                                     value={item.name}
                                     disabled={!isEnabled}
@@ -42,20 +44,19 @@ class VehicleSelection extends React.Component{
                    
                 </form>
             </div>
+          
         )
     }
 }
 
 
-/*  Mapping the state to desired props for the component */
 function mapStateToProps(state, ownProps) {
     return {
         vehicles: state.vehicleDetails.vehicleList,
-        vehicleSelectionList: state.vehicleDetails.vehicleSelectionList
+        VehicleSelectionList: state.vehicleDetails.VehicleSelectionList
     };
 }
 
-/* Mapping the props for the desired dispatch actions */
 const mapDispatchToProps = {updateVehicleSelection};
 
 

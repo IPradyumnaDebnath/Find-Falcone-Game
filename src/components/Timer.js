@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { updateTimeTaken } from '../../redux/actions/gameAction';
-import './style.css';
+import { updateTimeTaken } from '../redux/actions/gameAction';
+
 
 class Timer extends React.Component{
     constructor(){
@@ -23,7 +23,7 @@ class Timer extends React.Component{
             planetDistanceList.push(props.planetMap[item]); 
             return item;
         });
-        props.vehicleSelectionList.map((item,index)=> {
+        props.VehicleSelectionList.map((item,index)=> {
             timeTaken += planetDistanceList[index]/props.vehicleMap[item]
             return item;
         })
@@ -32,22 +32,21 @@ class Timer extends React.Component{
 
     render(){
         return (
-            <div className="timerContainer">
-                Time Taken: {this.state.timeTaken}
+            <div className="Container ml-3">
+                <div className="row justify-content-center "></div>
+                <h2>Time Taken</h2>
+                <div className="row justify-content-center border rounded-pill ">{this.state.timeTaken}</div>
             </div>
         )
     }
 }
 
-/** 
- *  Mapping the state to desired props for the component
- */
 function mapStateToProps(state, ownProps) {
     return {
         planetMap:  state.planetDetails.planetMap,
         vehicleMap: state.vehicleDetails.vehicleMap,
         planetSelectionList: state.planetDetails.planetSelectionList,
-        vehicleSelectionList: state.vehicleDetails.vehicleSelectionList
+        VehicleSelectionList: state.vehicleDetails.VehicleSelectionList
     };
 }
 

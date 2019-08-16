@@ -1,5 +1,5 @@
 import { ACTION_TYPE } from '../actionTypes';
-import { fetchGet } from './serverAction';
+import { fetchGet } from './apiAction';
 
 export function updateVehicleSelection(id,data) {
     return { type: ACTION_TYPE.UPDATE_SELECTED_VEHICLE, id, data}

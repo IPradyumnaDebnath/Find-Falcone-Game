@@ -1,5 +1,5 @@
 import { ACTION_TYPE } from '../actionTypes';
-import { fetchPost } from './serverAction';
+import { fetchPost } from './apiAction';
 
 export function clearData() {
     return { type: ACTION_TYPE.CLEAR_DATA }
@@ -26,7 +26,7 @@ export function getResult(history) {
                 let request = {
                     token: response.token,
                     planet_names: state.planetDetails.planetSelectionList,
-                    vehicle_names: state.vehicleDetails.vehicleSelectionList
+                    vehicle_names: state.vehicleDetails.VehicleSelectionList
                 }
                 return fetchPost('find', request).then(resp => {
                     if(resp.hasOwnProperty('status') && resp.status){

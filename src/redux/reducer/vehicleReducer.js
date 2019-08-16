@@ -3,7 +3,7 @@ import { ACTION_TYPE } from '../actionTypes';
 let initialState = {
     vehicleList: [],
     vehicleMap:{},
-    vehicleSelectionList: []
+    VehicleSelectionList: []
 }
 
 export default function vehicleReducer(state = initialState, action) {
@@ -12,7 +12,7 @@ export default function vehicleReducer(state = initialState, action) {
             return {
                 vehicleList: [],
                 vehicleMap:{},
-                vehicleSelectionList: []
+                VehicleSelectionList: []
             }
         case ACTION_TYPE.UPDATE_VEHICLE_LIST:
             let vehicleMap = {};
@@ -22,9 +22,9 @@ export default function vehicleReducer(state = initialState, action) {
             return { ...state, vehicleList: action.data, vehicleMap }
         
         case ACTION_TYPE.UPDATE_SELECTED_VEHICLE:
-            let vehicleSelectionList = state.vehicleSelectionList
-            vehicleSelectionList[action.id] = action.data
-            return { ...state, vehicleSelectionList: vehicleSelectionList.slice(0, action.id + 1)}
+            let VehicleSelectionList = state.VehicleSelectionList
+            VehicleSelectionList[action.id] = action.data
+            return { ...state, VehicleSelectionList: VehicleSelectionList.slice(0, action.id + 1)}
             
         default:
             return state;

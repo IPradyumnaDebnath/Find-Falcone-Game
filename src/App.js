@@ -4,27 +4,24 @@ import {
   Route,
   Switch,
 } from "react-router-dom";
-import PageNotFound from './pages/pageNotFound';
-import PlanetFinder from './pages/mainPage';
-import Result from './pages/resultPage';
-import Header from './components/header';
-import Footer from './components/footer';
-import './App.css';
+import NoPageAvailable from './components/404';
+import HomePage from './components/Home';
+import Result from './components/Result';
+
 
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header />
         <Router >
           <Switch>
-            <Route path="/" exact component={PlanetFinder} />
+            <Route path="/" exact component={HomePage} />
             <Route path="/result" exact component={Result} />
-            <Route component={PageNotFound} />
+            <Route component={NoPageAvailable} />
           </Switch>
         </Router>
-        <Footer />
+
       </div>
     );
   }

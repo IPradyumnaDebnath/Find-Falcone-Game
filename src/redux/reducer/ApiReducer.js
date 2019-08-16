@@ -3,7 +3,7 @@ import { ACTION_TYPE } from '../actionTypes';
 let initialState = {
     state: ''
 }
-function ajaxStatusReducer(state = initialState, action) {
+function responseStatusReducer(state = initialState, action) {
     switch (action.type) {
         case ACTION_TYPE.BEGIN_AJAX_CALL: 
             return { state: 'inprogress'}
@@ -19,4 +19,4 @@ function ajaxStatusReducer(state = initialState, action) {
     }
 }
 
-export default ajaxStatusReducer;
+export default responseStatusReducer;
